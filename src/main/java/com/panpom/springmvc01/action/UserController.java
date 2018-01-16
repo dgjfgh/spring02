@@ -40,7 +40,7 @@ public class UserController  {
 	@ResponseBody
 	public Object test(String uname){
 		System.out.println(uname);
-		ArrayList<User> list = user1Dao.list();//
+		ArrayList<User> list = user1Dao.list();//1
 		return list;
 	}
 
