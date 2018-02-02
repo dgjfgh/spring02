@@ -1,9 +1,9 @@
 package com.panpom.springmvc01.action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Calendar;
 
 import com.panpom.springmvc01.dao.User1Dao;
 import com.panpom.springmvc01.dao.UserDao;
@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.panpom.springmvc01.po.User;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -88,6 +89,35 @@ public class UserController  {
 	@RequestMapping("/main")
 	public Object main(){
 		return "main";
+	}
+
+	@RequestMapping("/testCookie")
+	public String ge1tCookie(HttpServletResponse response) throws IOException {
+		String LAST_ACCESS_TIME="time";
+//		response.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html;charset=UTF-8");
+		Cookie[] cookies = request.getCookies();
+		for(int i=0;cookies!=null&&i<cookies.length;i++){
+			Cookie cookie=cookies[i];
+			if(LAST_ACCESS_TIME.equals(cookie.getName())){
+				String time = cookie.getValue();
+				System.out.println("time="+time);
+			}
+		}
+
+		Calendar calendar = Calendar.getInstance();
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH);
+		int date = calendar.get(Calendar.DATE);
+		int hour = calendar.get(Calendar.HOUR_OF_DAY);
+		int minute = calendar.get(Calendar.MINUTE);
+		int second = calendar.get(Calendar.SECOND);
+		String time = year+"/"+(month+1)+"/"+date+" " +hour+":"+minute+":"+second;
+
+		Cookie cookie = new Cookie(LAST_ACCESS_TIME, time);
+		cookie.setMaxAge(300);//单位秒
+		response.addCookie(cookie);
+		return "";
 	}
 
 }
