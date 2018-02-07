@@ -59,39 +59,20 @@
 <br>
 <br>
 <ul class="nav nav-pills">
-    <li id="sy"><a href="#">首页</a></li>
+    <li id="sy"><a href="javascript:void(0)" onclick="roleupdate()">首页</a></li>
     <li id="zx"><a href="#">咨询</a></li>
     <li id="cp"><a href="#">产品</a></li>
     <li id="gy"><a href="#">关于</a></li>
 </ul>
 <script >
+    function roleupdate() {
+        alert("a")
+    }
     $(document).ready(function () {
-        var sy = $("#sy");
-        var zx = $("#zx");
-        var cp = $("#cp");
-        var gy = $("#gy");
-        var cur=sy
-        cur.addClass("active")
-        sy.click(function () {
-            cur.removeClass("active")
-            sy.addClass("active")
-            cur=sy
-        })
-        zx.click(function () {
-            cur.removeClass("active")
-            zx.addClass("active")
-            cur=zx
-        })
-        cp.click(function () {
-            cur.removeClass("active")
-            cp.addClass("active")
-            cur=cp
-        })
-        gy.click(function () {
-            cur.removeClass("active")
-            gy.addClass("active")
-            cur=gy
-        })
+        $('ul.nav > li').click(function () {
+            $('ul.nav > li').removeClass('active');
+            $(this).addClass('active');
+        });
     })
 </script>
 </body>
