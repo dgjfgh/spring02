@@ -59,7 +59,7 @@ ${user[0].uname}
 <%=request.getRealPath("./")%><br>
 <%=basePath%>
 
-<h2>这是一个标题</h2>
+<%--<h2>这是一个标题</h2>--%>
 <p>这是一个段落</p>
 <p id="test">这是另外一个段落</p>
 <button>点我</button><br>
@@ -88,10 +88,11 @@ ${user[0].uname}
      * @constructor
      */
     function User() {
-        this.name = 1
+        name
     }
 
     var user = new User()
+    user.name="你好"
     document.write(user.name)
 
     /**
@@ -118,7 +119,7 @@ ${user[0].uname}
     document.write(String(new Date()) + "<br>")
     var y = "John";   // y 是一个字符串
     var x = +y;
-    document.write(String(x))
+    document.write(x)
 
     "use strict";//严格模式
     ddd = 12
@@ -129,7 +130,7 @@ ${user[0].uname}
 <!--form  表单-->
 <script>
     function validateForm(){
-        var x=document.forms["myForm"]["email"].value;
+        var x=document.forms["myForm"]["fname"].value;
         var atpos=x.indexOf("@");
         var dotpos=x.lastIndexOf(".");
         if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){

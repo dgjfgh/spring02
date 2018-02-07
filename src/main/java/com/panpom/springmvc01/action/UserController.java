@@ -92,7 +92,9 @@ public class UserController  {
 	}
 
 	@RequestMapping("/testCookie")
+    @ResponseBody
 	public String ge1tCookie(HttpServletResponse response) throws IOException {
+	    String returnStr="";
 		String LAST_ACCESS_TIME="time";
 //		response.setCharacterEncoding("UTF-8");
 //		response.setContentType("text/html;charset=UTF-8");
@@ -101,7 +103,7 @@ public class UserController  {
 			Cookie cookie=cookies[i];
 			if(LAST_ACCESS_TIME.equals(cookie.getName())){
 				String time = cookie.getValue();
-				System.out.println("time="+time);
+                returnStr="time="+time;
 			}
 		}
 
@@ -117,7 +119,7 @@ public class UserController  {
 		Cookie cookie = new Cookie(LAST_ACCESS_TIME, time);
 		cookie.setMaxAge(300);//单位秒
 		response.addCookie(cookie);
-		return "";
+		return returnStr;
 	}
 
 }
