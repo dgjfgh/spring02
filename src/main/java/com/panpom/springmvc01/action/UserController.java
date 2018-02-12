@@ -6,6 +6,8 @@ import java.util.Calendar;
 
 import com.panpom.springmvc01.dao.User1Dao;
 import com.panpom.springmvc01.dao.UserDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 //@RequestMapping("/")
 public class UserController  {
+    Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private HttpServletRequest request;
@@ -47,6 +50,7 @@ public class UserController  {
 		ArrayList<User> users = userDao.selectUser(5);
 		ModelAndView modelAndView=new ModelAndView("index");
 		modelAndView.addObject("user",users);
+		log.error("aaaaa");
 		return "index";
 	}
 
@@ -77,8 +81,7 @@ public class UserController  {
 	public Object tt(String name,String pwd,HttpServletResponse response) throws IOException {
 		System.out.println(name);
 		System.out.println(pwd);
-		session.setAttribute("name",name);
-		session.setAttribute("pwd",pwd);
+		session.setAttribute("user",new User(1,name));
 		response.sendRedirect("main");
 		return null;
 	}

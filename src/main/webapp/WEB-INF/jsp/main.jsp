@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ page import = "com.panpom.springmvc01.bean.*" %>
-<%@ page import = "java.util.ArrayList" %>
+<%@ page import="org.slf4j.Logger" %>
+<%@ page import="org.slf4j.LoggerFactory" %>
 <%  String path = request.getContextPath();%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,7 +11,7 @@
 <link href="<%=path%>/css/zTreeStyle.css" rel="stylesheet">
 
 
-<script type="text/javascript" src="<%=path%>/js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="<%=path%>/js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="<%=path%>/js/jquery.ztree.core-3.2.js"></script>
 <script type="text/javascript" src="<%=path%>/js/commonAll.js"></script>
 
@@ -319,10 +320,11 @@
     response.setDateHeader("Expires", 0);
     response.flushBuffer();
     User user=(User)request.getSession().getAttribute("user");
-    //UserBean ub = (UserBean)request.getSession().getAttribute("usersession");
     if(user == null){
         user=new User();
     }
+//    Logger log = LoggerFactory.getLogger(this.getClass());
+//    log.error("==========________");
 
 %>
 <body onload="getDate01()">
