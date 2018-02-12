@@ -9,7 +9,7 @@
         create table ${tableName} (id int primary key auto_increment,name varchar(20),age int)
     </update>
     <!-- 添加数据 -->
-    <insert id="add" parameterType="com.panpom.springmvc01.po.User">
+    <insert id="add" parameterType="com.panpom.springmvc01.bean.User">
         insert into t_user(name,age) value(#{name},#{age})
     </insert>
     <!-- 删除数据 -->
@@ -17,17 +17,17 @@
         delete from t_user where id = #{id}
     </delete>
     <!-- 修改数据 -->
-    <update id="update" parameterType="com.panpom.springmvc01.po.User">
+    <update id="update" parameterType="com.panpom.springmvc01.bean.User">
         update t_user set name=#{name},age=#{age} where id=#{id}
     </update>
     <!--根据id查询得到一个user对象-->
     <select id="getUser" parameterType="int"
-            resultType="com.panpom.springmvc01.po.User">
+            resultType="com.panpom.springmvc01.bean.User">
         select * from t_user where id=#{id}
     </select>
     <!--根据id查询得到一个user对象-->
     <select id="getUser1"
-            resultType="com.panpom.springmvc01.po.User">
+            resultType="com.panpom.springmvc01.bean.User">
         select * from t_user where  id=#{Id} and name=#{Name}
     </select>
     <!-- 查询所有的用户 -->
@@ -37,7 +37,7 @@
 
     <!--通过<resultMap>映射实体类属性名和表的字段名对应关系
     可以只写有区别的那几个字段-->
-    <resultMap type="com.panpom.springmvc01.po.User" id="dbUser">
+    <resultMap type="com.panpom.springmvc01.bean.User" id="dbUser">
         <id property="id" column="id"/>
         <result property="uname" column="name"/>
         <result property="age" column="age"/>

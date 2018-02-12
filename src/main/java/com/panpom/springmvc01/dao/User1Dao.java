@@ -1,6 +1,6 @@
 package com.panpom.springmvc01.dao;
 
-import com.panpom.springmvc01.po.User;
+import com.panpom.springmvc01.bean.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

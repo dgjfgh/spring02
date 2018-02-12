@@ -2,7 +2,7 @@ package com.panpom.springmvc01.dao;
 
 import java.util.ArrayList;
 
-import com.panpom.springmvc01.po.User;
+import com.panpom.springmvc01.bean.User;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 

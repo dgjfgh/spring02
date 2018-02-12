@@ -1,6 +1,5 @@
 package com.panpom.springmvc01.aop;
 
-import com.panpom.springmvc01.po.User;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
