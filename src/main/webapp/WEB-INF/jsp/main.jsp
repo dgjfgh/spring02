@@ -11,7 +11,9 @@
 <link href="<%=path%>/css/zTreeStyle.css" rel="stylesheet">
 
 
-<script type="text/javascript" src="<%=path%>/js/jquery-3.2.1.js"></script>
+<%--不能用3.2.1  不然显示不出树--%>
+<%--<script type="text/javascript" src="<%=path%>/js/jquery-3.2.1.js"></script>--%>
+<script type="text/javascript" src="<%=path%>/js/jquery-1.7.1.js"></script>
 <script type="text/javascript" src="<%=path%>/js/jquery.ztree.core-3.2.js"></script>
 <script type="text/javascript" src="<%=path%>/js/commonAll.js"></script>
 
