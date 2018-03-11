@@ -46,23 +46,23 @@ public class ThreadUtils {
     }
 
     public static void main(String[] args) {
-        ThreadUtils threadUtils = ThreadUtils.getInstance();
-        for (int i = 0; i < 5; i++) {
-            int finalI = i;
-            threadUtils.execute(new Runnable() {
-                @Override
-                public void run() {
-                    for (int i1 = 0; i1 < 4; i1++) {
-                        System.out.println(finalI + "" + i1 + Thread.currentThread().getName());
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            });
-        }
+//        ThreadUtils threadUtils = ThreadUtils.getInstance();
+//        for (int i = 0; i < 5; i++) {
+//            final int finalI = i;
+//            threadUtils.execute(new Runnable() {
+//                @Override
+//                public void run() {
+//                    for (int i1 = 0; i1 < 4; i1++) {
+//                        System.out.println(finalI + "" + i1 + Thread.currentThread().getName());
+//                        try {
+//                            Thread.sleep(1000);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }
+//            });
+//        }
 
     }
 }
