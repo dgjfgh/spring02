@@ -8,7 +8,7 @@
 <head>
     <title>cs</title>
     <%--<script src="https://code.jquery.com/jquery.js"></script>--%>
-    <script src="<%=path%>/js/jquery-3.2.1.js"></script>
+    <script src="<%=path%>/js/jquery-1.7.1.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -18,7 +18,7 @@
 //                alert($(this).width())
                 $.ajax({
                     type: "POST",
-                    url: "/springmvc/test",
+                    url: "/springmvc01/testSqlxml",
                     data: "uname=haha",
                     async: true,
                     cache: true,

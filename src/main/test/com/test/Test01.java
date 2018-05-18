@@ -18,6 +18,9 @@ public class Test01 {
     public int hash(Object o) {
         return o.hashCode() % defaltLength;
     }
+    @Test
+    public void main(){
+    }
 
 
 }

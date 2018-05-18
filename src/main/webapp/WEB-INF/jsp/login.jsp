@@ -28,7 +28,7 @@
 
 <body>
 
-<form name="loginForm" action="/springmvc/login"
+<form name="loginForm" action="login"
       <%--onsubmit="return validateForm()" --%>
       method="post">
     账号: <input type="text" name="name">

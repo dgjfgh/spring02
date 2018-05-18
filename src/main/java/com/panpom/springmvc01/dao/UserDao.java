@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
 	
-	@Select("SELECT * FROM t_user WHERE ID > #{id}")
+	@Select("SELECT * FROM t_user WHERE ID = #{id}")
 	ArrayList<User> selectUser(int id);
 
 }

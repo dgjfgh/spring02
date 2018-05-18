@@ -25,34 +25,27 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 //@RequestMapping("/")
-public class UserController {
+public class UserController extends BaseController{
     Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private HttpServletRequest request;
-    @Autowired
-    private HttpSession session;
     @Autowired
     private UserDao userDao;
     @Autowired
     private User1Dao user1Dao;
 
-    @RequestMapping(value = "/test", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
-    public Object test(String uname) {
+    @RequestMapping(value = "/testSqlxml", method = {RequestMethod.POST, RequestMethod.GET})
+    public Object testSqlxml(String uname) {
         System.out.println(uname);
         ArrayList<User> list = user1Dao.list();
         return list;
     }
 
-    @RequestMapping("/index")
-    public Object gettest2(String name) {
-
-        ArrayList<User> users = userDao.selectUser(5);
-        ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("user", users);
-        log.error("aaaaa");
-        return "index";
+    @ResponseBody
+    @RequestMapping("/testSqlAnno")
+    public Object testSqlAnno(String name) {
+        ArrayList<User> users = userDao.selectUser(4);
+        return users;
     }
 
     @RequestMapping(value = "/index1")
@@ -94,7 +87,7 @@ public class UserController {
 
     @RequestMapping("/testCookie")
     @ResponseBody
-    public String getCookie(HttpServletResponse response) throws IOException {
+    public String gotCookie(HttpServletResponse response) throws IOException {
         String returnStr = "";
         String LAST_ACCESS_TIME = "time";
 //		response.setCharacterEncoding("UTF-8");
