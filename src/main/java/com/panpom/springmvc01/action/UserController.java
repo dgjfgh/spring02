@@ -34,7 +34,7 @@ public class UserController extends BaseController{
     private User1Dao user1Dao;
 
     @ResponseBody
-    @RequestMapping(value = "/testSqlxml", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "/testsqlxml", method = {RequestMethod.POST, RequestMethod.GET})
     public Object testSqlxml(String uname) {
         System.out.println(uname);
         ArrayList<User> list = user1Dao.list();
@@ -42,7 +42,7 @@ public class UserController extends BaseController{
     }
 
     @ResponseBody
-    @RequestMapping("/testSqlAnno")
+    @RequestMapping("/testsqlanno")
     public Object testSqlAnno(String name) {
         ArrayList<User> users = userDao.selectUser(4);
         return users;

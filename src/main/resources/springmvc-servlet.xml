@@ -11,6 +11,14 @@
         http://www.springframework.org/schema/task
         http://www.springframework.org/schema/task/spring-task-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <aop:aspectj-autoproxy/>
+
+    <!-- S 配置定时任务-->
+    <task:executor id="executor" pool-size="5" />
+    <!--配置线程池-->
+    <task:scheduler id="scheduler" pool-size="10" />
+    <task:annotation-driven executor="executor" scheduler="scheduler" />
+    <!--E 配置定时任务-->
+
     <!-- 组件扫描 -->
     <context:component-scan base-package="com.panpom.springmvc01"/>
     <context:annotation-config/>
@@ -31,9 +39,10 @@
     </mvc:annotation-driven>
 
     <!-- 配置静态资源 -->
-    <mvc:resources mapping="images/**" location="/images/"/>
+    <!--<mvc:resources mapping="images/**" location="/images/"/>
     <mvc:resources mapping="css/**" location="/css/"/>
-    <mvc:resources mapping="js/**" location="/js/"/>
+    <mvc:resources mapping="js/**" location="/js/"/>-->
+    <mvc:resources mapping="/**" location="/"/>
 
     <!-- 视图解析器 解析jsp视图，默认使用jstl，要求classpath下有jstl的jar包 -->
     <bean
@@ -44,7 +53,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <context:property-placeholder location="classpath:*.properties" ignore-unresolvable="true" />
+    <context:property-placeholder location="classpath*:*.properties" ignore-unresolvable="true" />
 
     <import resource="classpath:spring/spring-*.xml" />
 
