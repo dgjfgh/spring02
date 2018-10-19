@@ -125,6 +125,32 @@ ${user[0].uname}
     ddd = 12
     document.write(ddd)
 
+    var wsscat = function (name) {
+        var self = this;
+        var x = 'autumns';
+        this.name = name;
+        console.log("---",this);
+        console.log("---",self);
+        this.func = function () {
+            console.log("wsscat's func");
+        };
+        this.func2 = function () {
+            func3();//不能用self.func3()和this.func3()
+        }
+
+        //闭包里面，既嵌套函数里面如果想使用wsscat对象的方法或者变量要用self
+        function func3() {
+            console.log("---func3",this);
+            console.log(this)//指向window对象
+            //this.func();//报错this.func is not a function
+            self.func();//不能用this.func(),也不能用func()
+            console.log("wsscat's func3");
+        }
+    };
+
+    var obj = new wsscat('wsscat1')
+    obj.func2()
+
 </script>
 
 <!--form  表单-->
