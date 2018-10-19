@@ -1,6 +1,7 @@
 package com.test;
 
 import org.junit.Test;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
  * Created by majianghua on 2018/1/3.
