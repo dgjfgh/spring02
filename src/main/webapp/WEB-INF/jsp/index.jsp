@@ -54,7 +54,7 @@
 
 </script>
 <body>
-${user[0].uname}
+${user[0].uName}
 <%=request.getRealPath("url")%><br>
 <%=request.getRealPath("./")%><br>
 <%=basePath%>

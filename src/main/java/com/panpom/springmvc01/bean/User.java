@@ -3,7 +3,7 @@ package com.panpom.springmvc01.bean;
 public class User {
     private int id;
 
-    private String uname;
+    private String uName;
     private int age;
 
     public int getAge() {
@@ -22,12 +22,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUname() {
-        return uname;
+    public String getuName() {
+        return uName;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setuName(String uName) {
+        this.uName = uName;
     }
 
     public User() {
@@ -37,7 +37,15 @@ public class User {
     public User(int id, String uname) {
         super();
         this.id = id;
-        this.uname = uname;
+        this.uName = uname;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", uName='" + uName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

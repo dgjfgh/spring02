@@ -19,13 +19,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.panpom.springmvc01.bean.User;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @Controller
 //@RequestMapping("/")
-public class UserController extends BaseController{
+public class UserController extends BaseController {
     Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -38,7 +36,15 @@ public class UserController extends BaseController{
     public Object testSqlxml(String uname) {
         System.out.println(uname);
         ArrayList<User> list = user1Dao.list();
-        return list;
+
+        User user = user1Dao.getUser(10);
+        System.out.println(user.toString());
+//        User user = new User();
+//        user.setuName("mjh");
+//        user.setAge(2);
+//        int add = user1Dao.add(user);
+//        System.out.println(user.getId());
+        return user;
     }
 
     @ResponseBody

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public interface User1Dao {
 
     void createTable (@Param("tableName") String tableName);
-    void add(User user);
+    int add(User user);
     void del(int id);
     void update(User user);
     User getUser(int id);

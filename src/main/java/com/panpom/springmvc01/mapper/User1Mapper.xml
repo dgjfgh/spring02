@@ -6,19 +6,19 @@
 <mapper namespace="com.panpom.springmvc01.dao.User1Dao">
     <!-- 创建表 -->
     <update id="createTable" parameterType="String">
-        create table ${tableName} (id int primary key auto_increment,name varchar(20),age int)
+        create table ${tableName} (id int primary key auto_increment,uName varchar(20),age int)
     </update>
     <!-- 添加数据 -->
-    <insert id="add" parameterType="com.panpom.springmvc01.bean.User">
-        insert into t_user(name,age) value(#{name},#{age})
+    <insert id="add" parameterType="com.panpom.springmvc01.bean.User" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user(uName,age) value(#{uName},#{age})
     </insert>
     <!-- 删除数据 -->
-    <delete id="del" parameterType="int">
+    <delete id="del" parameterType="int" >
         delete from t_user where id = #{id}
     </delete>
     <!-- 修改数据 -->
     <update id="update" parameterType="com.panpom.springmvc01.bean.User">
-        update t_user set name=#{name},age=#{age} where id=#{id}
+        update t_user set uName=#{uName},age=#{age} where id=#{id}
     </update>
     <!--根据id查询得到一个user对象-->
     <select id="getUser" parameterType="int"
@@ -28,7 +28,7 @@
     <!--根据id查询得到一个user对象-->
     <select id="getUser1"
             resultType="com.panpom.springmvc01.bean.User">
-        select * from t_user where  id=#{Id} and name=#{Name}
+        select * from t_user where  id=#{Id} and uName=#{Name}
     </select>
     <!-- 查询所有的用户 -->
     <select id="list" resultMap="dbUser">
@@ -39,7 +39,7 @@
     可以只写有区别的那几个字段-->
     <resultMap type="com.panpom.springmvc01.bean.User" id="dbUser">
         <id property="id" column="id"/>
-        <result property="uname" column="name"/>
+        <result property="uName" column="u_name"/>
         <result property="age" column="age"/>
     </resultMap>
 

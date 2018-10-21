@@ -339,7 +339,7 @@
             <ul>
                 <li>
                     <img alt="当前用户" src="images/user.jpg">：
-                    <span><%=user.getUname() %></span>
+                    <span><%=user.getuName() %></span>
                 </li>
 
                 <li>
