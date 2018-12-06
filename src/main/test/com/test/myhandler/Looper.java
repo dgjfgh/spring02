@@ -13,7 +13,7 @@ public class Looper {
 
     public static void prerpare() {
         if (sThreadLocal.get() != null) {
-            throw new RuntimeException("Only one looper can be created per thread");
+            throw new RuntimeException("Only one looper can be created Person thread");
         }
         sThreadLocal.set(new Looper());
     }
