@@ -27,11 +27,11 @@ public class RedisController extends BaseController{
             System.out.println(mjh);
             if (mjh==null) {
                 RedisUtils.setStringValue(redisTemplate, "mjh", "hello");
-                return "set";
+                return "set  "+mjh;
             }
-            return "get";
+            return "get  "+mjh;
         }catch (Exception e){
-            return "";
+            return ""+e.getMessage();
         }
     }
 
