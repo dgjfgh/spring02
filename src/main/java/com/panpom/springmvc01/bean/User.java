@@ -1,5 +1,10 @@
 package com.panpom.springmvc01.bean;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import jdk.nashorn.internal.objects.Global;
+
 public class User {
     private int id;
 
@@ -48,4 +53,5 @@ public class User {
                 ", age=" + age +
                 '}';
     }
+
 }

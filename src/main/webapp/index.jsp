@@ -22,8 +22,8 @@
     </style>
 </head>
 <body>
-<audio autoplay="autopaly">
-    <source src="http://sc.111ttt.com/up/mp3/13578191/5675BEB58762ABC0F85C1C343628AC72/%E6%83%85%E6%AD%8C%E6%82%A0%E6%89%AC%20-%20%E6%9C%AC%E5%85%AE.mp3" type="audio/mp3" />
+<audio autoplay="autopaly" loop>
+    <source src="index_files/aywzxz.mp3" type="audio/mp3" />
 </audio>
 <div id="main">
     <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
@@ -34,15 +34,15 @@
                 <span class="say"> </span><br>
                 <span class="say"> Our Story  我们的故事</span><br>
                 <span class="say"> </span><br>
-                <span class="say">// 不经意相识, 或许是缘分，或许是注定的。</span><br>
+                <span class="say">// 不经意相识, 也许是缘分，或许是注定的。</span><br>
                 <span class="say"> </span><br>
-                <span class="say">// 以后不管有怎么样，我都会在。</span><br>
+                <span class="say">// 以后不管怎么样，我都会陪着你。</span><br>
                 <span class="say"> </span><br>
                 <span class="say">// 就算全世界都都抛弃你，记得还有我。</span><br>
                 <span class="say"> </span><br>
                 <span class="say">// 再累都不用害怕，因为你有我。</span><br>
                 <span class="say"> </span><br>
-                <span class="say">// 记得在你最需要的时候想起我。</span><br>
+                <span class="say">// 记得 在你最需要的时候想起我。</span><br>
                 <span class="say"> </span><br>
                 <span class="say">// 我会一直陪着你。</span><br>
                 <span class="say"> </span><br>
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div id="clock-box">
-            张艳玲<span class="STYLE1">与</span> 金京锋<span class="STYLE1">已经相识了</span>
+            张艳玲 <span class="STYLE1">与</span> 金京锋<span class="STYLE1">已经相识了</span>
             <div id="clock"></div>
         </div>
         <canvas id="canvas" width="1100" height="680"></canvas>
@@ -225,5 +225,5 @@
     })();
 </script>
 
-<center>&copy; <a href="http://www.codejie.net/"> 源码街</a></center>
+<%--<center>&copy; <a href="http://www.codejie.net/"> 源码街</a></center>--%>
 </body></html>

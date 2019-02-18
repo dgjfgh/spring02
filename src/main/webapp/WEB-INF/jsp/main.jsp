@@ -167,49 +167,51 @@
             if(treeNode.accessPath=="" || treeNode.accessPath=="#"){
                 //alert("节点路径为空或者为'#'哦...");
                 // alert(treeNode.resourceID)
+                var rightMain = $('#rightMain');
+                var hereArea = document.getElementById("here_area");
                 switch(treeNode.resourceID){
                     case 10:
-                        $('#rightMain').attr("src","index");
-                        document.getElementById("here_area").innerHTML = "当前位置：账号管理&nbsp;>&nbsp;用户管理"
+                        rightMain.attr("src","loginpage");
+                        hereArea.innerHTML = "当前位置：账号管理&nbsp;>&nbsp;用户管理"
                         break;
                     case 11:
-                        $('#rightMain').attr("src","main");
-                        document.getElementById("here_area").innerHTML = "当前位置：账号管理&nbsp;>&nbsp;村管理"
+                        rightMain.attr("src","main");
+                        hereArea.innerHTML = "当前位置：账号管理&nbsp;>&nbsp;村管理"
                         break;
                     case 12:
                         // $('#main').load("main-shwoTown.action?type=0");
-                        $('#rightMain').attr("src","main-shwoTown.action?type=0");
-                        document.getElementById("here_area").innerHTML = "当前位置：账号管理&nbsp;>&nbsp;镇管理"
+                        rightMain.attr("src","main-shwoTown.action?type=0");
+                        hereArea.innerHTML = "当前位置：账号管理&nbsp;>&nbsp;镇管理"
                         break;
                     case 13:
                         // $('#main').load("main-showservice.action?type=0");
-                        $('#rightMain').attr("src","main-showservice.action?type=0");
-                        document.getElementById("here_area").innerHTML = "当前位置：账号管理&nbsp;>&nbsp;服务管理"
+                        rightMain.attr("src","main-showservice.action?type=0");
+                        hereArea.innerHTML = "当前位置：账号管理&nbsp;>&nbsp;服务管理"
                         break;
                     case 14:
                         // $('#main').load("main-showDeployNotice.action");
-                        $('#rightMain').attr("src","main-showDeployNotice.action");
-                        document.getElementById("here_area").innerHTML = "当前位置：内容管理&nbsp;>&nbsp;部署管理"
+                        rightMain.attr("src","main-showDeployNotice.action");
+                        hereArea.innerHTML = "当前位置：内容管理&nbsp;>&nbsp;部署管理"
                         break;
                     case 15:
                         // $('#main').load("file-getFiles.action");
-                        $('#rightMain').attr("src","file-getFiles.action");
-                        document.getElementById("here_area").innerHTML = "当前位置：内容管理&nbsp;>&nbsp;目录管理"
+                        rightMain.attr("src","file-getFiles.action");
+                        hereArea.innerHTML = "当前位置：内容管理&nbsp;>&nbsp;目录管理"
                         break;
                     case 16:
                         // $('#main').load("main-showLog.action");
-                        $('#rightMain').attr("src","main-showLog.action");
-                        document.getElementById("here_area").innerHTML = "当前位置：记录查询&nbsp;>&nbsp;查询所有记录"
+                        rightMain.attr("src","main-showLog.action");
+                        hereArea.innerHTML = "当前位置：记录查询&nbsp;>&nbsp;查询所有记录"
                         break;
                     case 17:
                         // $('#main').load("main-help.action");
-                        $('#rightMain').attr("src","main-help.action");
-                        document.getElementById("here_area").innerHTML = "当前位置：帮助说明&nbsp;>&nbsp;帮助说明"
+                        rightMain.attr("src","main-help.action");
+                        hereArea.innerHTML = "当前位置：帮助说明&nbsp;>&nbsp;帮助说明"
                         break;
                     case 18:
                         //$('#main').load("file-helpdownloadfile.action");
-                        $('#rightMain').attr("src","file-helpdownloadfile.action");
-                        document.getElementById("here_area").innerHTML = "当前位置：帮助说明&nbsp;>&nbsp;模版文件下载"
+                        rightMain.attr("src","file-helpdownloadfile.action");
+                        hereArea.innerHTML = "当前位置：帮助说明&nbsp;>&nbsp;模版文件下载"
                         break;
                 }
 
